@@ -35,22 +35,47 @@ body{
     margin: 20px;
     font-size: 30px;
 }
+
+h1.heading-title{
+    color: var(--main-color);
+    position: relative;
+}
+h1.heading-title::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 5px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--main-color);
+    /* background-image: url("/assets/Images/Underline.svg"); */
+    transform: translateX(-50%);
+}
+
+
+
 /* Componant */
 
-/* main */
+/* global */
 a{
     text-decoration: none;
 }
-/* main */
+
+section{
+    margin: 20px;
+}
+/* global*/
+
+/* Header */
 header{
-background-color: var(--main-color);
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 30px;
-height: 100px;
-box-shadow: 0 0 10px 1px rgba(62, 62, 62, 0.193);
-font-size: 20px;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 100px;
+    box-shadow: 0 0 10px 1px rgba(62, 62, 62, 0.193);
+    font-size: 20px;
 }
 
 .logo{
@@ -103,6 +128,7 @@ ul li:hover::after{
     color: var(--main-color);
 }
 
+/* Header */
 
 /* Landing Page */
 
@@ -171,19 +197,78 @@ ul li:hover::after{
 
 
 
-/* Section 1 */
 
-h1.heading-title{
+/* Section 1 (services) */
+.services .boxes{
+    
+}
+
+
+
+
+
+
+/* End Services */
+
+.services-container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;        
+    flex-wrap: wrap ;
+    max-width: 1000px;
+    gap: 30px;
+}
+
+.service{
+    text-align: center;
+    margin: 50px auto;
+}
+
+.service i{
+font-size: 50px;
+color: var(--main-color);
+}
+.service .data{
+width: 300px;    
+text-wrap: wrap;
+}
+.service .data h1{
+font-size: 30px;    
+color: var(--main-color);
+}
+
+
+
+
+
+
+/* 
+.services .boxes {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)) ;
+    justify-items: center;
+    gap: 20px;
+}
+.services .boxes .box{
+    max-width: 350px;
+    background-color: #eee;
+}
+.services .boxes .box .data{
+    max-width: 350px;
+    background-color: #eee;
+    padding: 20px;
     color: var(--main-color);
-    position: relative;
 }
-h1.heading-title::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: -19px;
-    left: 50%;
-    background-image: url("/assets/Images/Underline.svg");
-    transform: translateX(-50%);
+.services .boxes .box .data{
+    max-width: 350px;
+    background-color: #eee;
+    padding: 20px;
+    color: var(--main-color);
 }
+.services .boxes .box .image{
+    width: 100%;
+}
+.services .boxes .box .image img{
+    width: 100%;
+} */
