@@ -84,7 +84,7 @@ a{
     text-decoration: none;
 }
 
-section{
+section:not('image'){
     margin: 100px;
 }
 section::after{
@@ -293,32 +293,72 @@ transition: 0.3s;
 
 
 
-/* 
-.services .boxes {
+
+
+/* Start Section 2 (Fabrics) */
+
+/* land start */
+.image-land{
+    background:linear-gradient(rgba(0, 0, 0, 0.284),#4169e1),url("/assets/Images/addtional-images/Fabric.jpg");
+    width: 100%;
+    height: calc(100vh + 10px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:10px solid var(--main-color) ;
+    border-bottom:10px solid var(--second-color) ;
+}
+.image-land.fabric{
+    background:linear-gradient(rgba(0, 0, 0, 0.284),#4169e1),url("/assets/Images/addtional-images/Fabric.jpg");
+}
+.fabric h1{
+    color: white;
+    font-size: 100px;
+}
+/* land end */
+
+
+
+
+
+.fabrics .boxes {
     display: grid;
     grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)) ;
     justify-items: center;
     gap: 20px;
 }
-.services .boxes .box{
+
+.fabrics .boxes {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)) ;
+    justify-items: center;
+    gap: 20px;
+}
+.fabrics .boxes .box{
     max-width: 350px;
     background-color: #eee;
 }
-.services .boxes .box .data{
+.fabrics .boxes .box .data{
     max-width: 350px;
     background-color: #eee;
     padding: 20px;
     color: var(--main-color);
 }
-.services .boxes .box .data{
+.fabrics .boxes .box .data{
     max-width: 350px;
     background-color: #eee;
     padding: 20px;
     color: var(--main-color);
 }
-.services .boxes .box .image{
+.fabrics .boxes .box .image{
     width: 100%;
 }
-.services .boxes .box .image img{
+.fabrics .boxes .box .image img{
     width: 100%;
-} */
+} 
+
+/* End Section 2 (Fabrics) */
+
