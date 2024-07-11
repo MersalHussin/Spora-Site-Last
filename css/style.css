@@ -113,6 +113,16 @@ ul{
     display: flex;
     gap: 30px;
 }
+ul a.active li{
+    color: var(--second-color); 
+}
+ul a.active li:hover{
+   transform: scale(1.1);
+}
+ul a.active li::after{
+    width: 50px; 
+}
+
 
 ul li{
     color:var(--white);
@@ -149,6 +159,7 @@ ul li:hover::after{
 .button a{
     color: var(--main-color);
 }
+
 .button:hover{
     background-color: var(--white);
     color: var(--main-color);
@@ -225,17 +236,6 @@ ul li:hover::after{
 
 
 /* Section 1 (services) */
-.services .boxes{
-    
-}
-
-
-
-
-
-
-/* End Services */
-
 .services-container{
     display: flex;
     justify-content: center;
@@ -265,13 +265,13 @@ ul li:hover::after{
     animation: mini-rotate 0.3s linear  2 alternate ;
 }
 .service .data{
-width: 300px;    
-text-wrap: wrap;
+    width: 300px;    
+    text-wrap: wrap;
 }
 .service .data h1{
-font-size: 30px;    
-color: var(--main-color);
-transition: 0.3s;
+    font-size: 30px;    
+    color: var(--main-color);
+    transition: 0.3s;
 }
 .service .data p{
 font-size: 18px;
@@ -288,6 +288,7 @@ transition: 0.3s;
     }
 }
 
+/* End Services */
 
 
 
