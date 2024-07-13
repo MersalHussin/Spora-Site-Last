@@ -381,20 +381,17 @@ transition: 0.3s;
 
 
 
-
+.fabrics{
+    margin: 20px;
+}
 .fabrics .boxes {
     display: grid;
     grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)) ;
     justify-items: center;
+    align-items: center;
     gap: 20px;
 }
 
-.fabrics .boxes {
-    display: grid;
-    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)) ;
-    justify-items: center;
-    gap: 20px;
-}
 .fabrics .boxes .box{
     max-width: 350px;
     background-color: #eee;
@@ -413,10 +410,17 @@ transition: 0.3s;
 }
 .fabrics .boxes .box .image{
     width: 100%;
+    overflow: hidden;
+    transition: 0.3s;
 }
 .fabrics .boxes .box .image img{
-    width: 100%;
-} 
+    max-width: 100%;
+    transition: 0.3s;
+}
+.fabrics .boxes .box:hover .image img{
+    transform: scale(1.3);
+    rotate: 5deg;
+}
 
 /* End Section 2 (Fabrics) */
 
