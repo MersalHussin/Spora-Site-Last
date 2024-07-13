@@ -191,17 +191,7 @@ ul li:hover::after{
     position: absolute;
     background-repeat: no-repeat;
 }
-.landing::after{
-    background-image: url("/assets/Images/Shabes-animation.svg");
-    right:0;
-    /* animation:  shapes-ani-right 20s linear  infinite alternate ; */
-}
 
-.landing::before{
-    background-image: url("/assets/Images/Shabes-animation.svg");
-    /* animation: shapes-ani-left 20s linear  infinite alternate ; */
-    transform: rotate(180deg);
-}
 
 .landing img{
     width: 500px;
@@ -393,32 +383,38 @@ transition: 0.3s;
 }
 
 .fabrics .boxes .box{
-    max-width: 350px;
-    background-color: #eee;
-}
-.fabrics .boxes .box .data{
-    max-width: 350px;
-    background-color: #eee;
-    padding: 20px;
-    color: var(--main-color);
-}
-.fabrics .boxes .box .data{
-    max-width: 350px;
-    background-color: #eee;
-    padding: 20px;
-    color: var(--main-color);
-}
-.fabrics .boxes .box .image{
-    width: 100%;
-    overflow: hidden;
+    width: 350px;
+    border-radius: 10px;
     transition: 0.3s;
 }
+.fabrics .boxes .box:hover{
+    transform: translateY(-10px);
+}
+.fabrics .boxes .box .data {
+    max-width: 100%;
+    background-color: var(--main-color);
+    padding: 20px;
+    color: var(--white);
+    text-align: center;
+    border: 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+.fabrics .boxes .box .image {
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: 0.3s;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+}
+
 .fabrics .boxes .box .image img{
     max-width: 100%;
     transition: 0.3s;
 }
 .fabrics .boxes .box:hover .image img{
-    transform: scale(1.3);
+    transform: scale(1.1);
     rotate: 5deg;
 }
 
