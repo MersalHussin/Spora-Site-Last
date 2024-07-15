@@ -84,8 +84,8 @@ a{
     text-decoration: none;
 }
 
-section:not('image'){
-    margin: 100px;
+section{
+    margin: 100px auto;
 }
 section::after{
     content: "";
@@ -93,16 +93,23 @@ section::after{
 /* global*/
 
 /* Header */
-header{
+header {
     background-color: var(--main-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
     padding: 0 30px;
     height: 100px;
     box-shadow: 0 0 10px 1px rgba(62, 62, 62, 0.193);
     font-size: 20px;
+    width: 100%;
+    z-index: 999;
 }
+.on-mobile{
+    display: none;
+}
+
 
 .logo{
     width: 75px;
@@ -165,6 +172,105 @@ ul li:hover::after{
     color: var(--main-color);
 }
 
+
+
+/* Burger menu */
+.burger-menu {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+.burger-menu span{
+    background: white;
+    width: 30px;
+    height: 5px;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    transition: 0.3s;
+}
+.burger-menu span:nth-child(2){
+    top: 10px;
+    width: 10px;
+}
+.burger-menu span:nth-child(3){
+    top: 20px;
+}
+.burger-menu:hover span:nth-child(2) {
+    width: 30px;
+}
+
+.burger-menu.opened span:nth-child(2) {
+    opacity: 0;
+}
+.burger-menu.opened span {
+    rotate: 45deg;
+    top: 15px;
+    background-color: var(--second-color);
+}
+.burger-menu.opened span:nth-child(3) {
+    rotate: -45deg;
+    top: 15px;
+    background-color: var(--second-color);
+}
+.on-mobile.opened{
+    display: none;
+    padding: 50px 0;
+    position: fixed;
+    width: 100%;
+    flex-direction: column;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.on-mobile.opened ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.on-mobile.opened .button{
+    margin-top: 50px;
+
+}
+
+.on-mobile.opened::after{
+    content: "";
+    position: fixed;
+    background: rgba(0, 0, 0, 0.62);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+@media(300px<= width <= 767px){
+    .on-pc{
+        display: none;
+    }
+    .button.pc{
+        display: none;
+    }
+    .burger-menu{
+        display: block;
+    }
+    .on-mobile.opened{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* Burger-menu */
+
+
+
 /* Header */
 
 /* Landing Page */
@@ -174,7 +280,7 @@ ul li:hover::after{
     z-index: -1;
     background-image: url("/assets/Images/Landing-image.svg");
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -197,6 +303,7 @@ ul li:hover::after{
     width: 500px;
     animation:image-ani  2s linear  infinite alternate ;
 }
+
 
 @keyframes image-ani{
     0%{
@@ -222,7 +329,11 @@ ul li:hover::after{
     }
 }
 
-
+@media(300px<= width <= 767px){
+    .landing img{
+        width: 300px;
+    }
+}
 
 
 /* Section 1 (services) */
@@ -383,6 +494,7 @@ transition: 0.3s;
     align-items: center;
     gap: 20px;
     margin-top: 100px;
+    justify-content: center;
 }
 
 .fabrics .boxes .box{
@@ -395,6 +507,7 @@ transition: 0.3s;
     transform: translateY(-10px);
 }
 
+
 .fabrics .boxes .box .data {
     max-width: 100%;
     background-color: var(--main-color);
@@ -403,9 +516,30 @@ transition: 0.3s;
     text-align: center;
     border: 20px;
     border-radius: 0 0 20px 20px;
-    box-shadow: 0 5px 10px 10px #eee;   
-
+    box-shadow: 0 5px 10px 10px #eee;  
+    transition: 0.3s; 
 }
+
+
+.fabrics .boxes .box .data a {
+    background-color: var(--white);
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    margin: 10px auto 0 auto;
+    transition: 0.3s;
+    width: 200px;
+}
+
+
+.fabrics .boxes .box:hover .data a{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+.fabrics .boxes .box .data a:hover{
+    background-color: var(--second-color);
+}
+
 
 .fabrics .boxes .box .image {
     max-width: 100%;
