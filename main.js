@@ -20,13 +20,27 @@ faq()
 
 
 function sendMessage() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    // const name = document.getElementById('name').value;
+    // const email = document.getElementById('email').value;
+    // const message = document.getElementById('message').value;
 
-    if (name && email && message) {
-        alert(`تم إرسال الرسالة بنجاح!\n\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\nالرسالة: ${message}`);
-        // هنا يمكنك إضافة كود لإرسال البيانات إلى الخادم باستخدام AJAX أو أي تقنية أخرى
+
+
+    let params = {
+        user_name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        number: document.getElementById("number").value,
+        message: document.getElementById("message").value,
+    }
+    if ( params.user_name && params.email && params.message && params.number) {
+        emailjs.send("service_kgli3cs","template_rtbiwwp" , params).then( _ => alert("تم إرسال الرسالة بنجاج"))
+        
+     // إعادة تعيين الحقول بعد الإرسال
+     document.getElementById("name").value = "";
+     document.getElementById("email").value = "";
+     document.getElementById("number").value = "";
+     document.getElementById("message").value = "";
+
     } else {
         alert('يرجى ملء جميع الحقول قبل إرسال الرسالة.');
     }
@@ -35,4 +49,3 @@ function sendMessage() {
 
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
-

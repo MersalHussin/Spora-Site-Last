@@ -23,7 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Noto Kufi Arabic", sans-serif;
+    font-family: "Tajawal", sans-serif;
     scroll-behavior: smooth;
 
 
@@ -31,6 +31,8 @@
 
 body{
     direction: rtl;
+    width: 100%;
+    height: 100vh   ;
 }
 /* Componant */
 .title{
@@ -93,6 +95,11 @@ section:not(.video-land , .image-land){
 section::after{
     content: "";
 }
+
+@media (max-width: 768px) {
+    section:not(.video-land , .image-land) {
+        margin: 20px;
+    }}
 /* global*/
 
 /* Header */
@@ -108,6 +115,7 @@ header {
     font-size: 20px;
     width: 100%;
     z-index: 999;
+    font-weight: 500;
 }
 .on-mobile{
     display: none;
@@ -345,7 +353,7 @@ ul li:hover::after{
 
 .about-section {
     width: 90%;
-    margin: 50px auto;
+    margin: 50px auto !important    ;
     background-color: #fff;
     padding: 20px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
@@ -572,8 +580,44 @@ transition: 0.3s;
     transition: 0.3s;
     box-shadow: 1px 1px 10px 2px #dfdfdf;  
 }
+.fabrics .boxes .box p{
+        font-weight: 500;
+        margin-top: 10px;
+        line-height: 1.6;
+}
+.fabrics .boxes .box.special{
+    transform: translateY(-20px);
+    position: relative;
+}
+.fabrics .boxes .box.special::after{
+    content: "الأكثر طلبًا";
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    right: 0;
+    font-weight: 500;
+}
+.fabrics .boxes .box.special .data{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+.fabrics .boxes .box.special .data a{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+.fabrics .boxes .box.special:hover .data a{
+    background-color: var(--main-color);
+    color: var(--white);
+}
 
-.fabrics .boxes .box:hover{
+.fabrics .boxes .box:hover:not(.special){
     transform: translateY(-10px);
 }
 
@@ -651,6 +695,12 @@ transition: 0.3s;
     background-color: var(--main-color);
     color: var(--white);
 }
+
+@media (max-width: 768px) {
+    .fabrics .boxes .box.special{
+        transform: translateY(0);
+        position: relative;
+    }}
 
 /* End Section 2 (Fabrics) */
 
@@ -764,6 +814,9 @@ transition: 0.3s;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
 }
+.contact-form img {
+    max-width: 500px;
+}
 
 .form-left {
     flex: 1;
@@ -801,11 +854,17 @@ transition: 0.3s;
 }
 
 .form-right {
+    margin: auto;
     flex: 1;
     background-color: #f0f3ff;
     border-radius: 20px;
     padding: 20px;
     position: relative;
+}
+.form-right .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-info {
@@ -832,8 +891,55 @@ transition: 0.3s;
 }
 
 
+@media (max-width: 768px) {
+    .contact-form {
+      flex-direction: column;
+      justify-content: space-between;
+    }}
 /* form */
 
+
+
+/* Locations */
+.locations-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .info {
+    text-align: center;
+    width: 100%;
+  }
+  .info h1 {
+    margin: 20px;
+    font-size: 2.5em !important;
+  }
+
+
+
+  .map-container {
+    width: 100%;   
+    height: 100%; 
+    height: 300 !important;
+    border: #4169e1 solid 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .locations-section {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .info, .map-container {
+      width: 100%;
+    }
+  }
+/* Locations */
 
 /* Footer */
 .footer {

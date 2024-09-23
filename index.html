@@ -6,9 +6,9 @@
     <title>Spora Tex</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="/assets/Images/Landing page/Logo White.svg ">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
@@ -75,6 +75,10 @@
             </div>
         </section>
     <!-- about us -->
+    <!-- about us Video -->
+            <h1 class="heading-title" style="text-align:center; margin-bottom:20px ;"> أعرف عننا أكتر</h1>
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1011727782?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="About Spora Tex"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+    <!-- about us Video -->
          
         <!-- Services -->
          <div id="Services" style="height: 100px;"></div>
@@ -160,12 +164,7 @@
             </div> 
         </section>
         
-        <!-- <section class="fabric video-land" >
-            <div class="video-container">
-                <video src="/assets/video/about us video.mp4"  autoplay loop muted ></video>
-            </div>
-        </section> -->
-        <!-- Services -->
+
 
         <section class="fabric image-land" style="display: none;">
             <h1>أجود أنواع الأقمشة</h1>
@@ -190,7 +189,7 @@
                             <a href="#wa">أسأل عن القماش</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box special">
                         <div class="image">
                             <img src="/assets/Images/Fabrics/IMG_0048 (1).JPG" alt="روزيتا">
                         </div>
@@ -338,7 +337,18 @@
         </section>
         <!-- FAQ -->
 
-
+        <section class="locations">
+            <div class="locations-section">
+                <div class="info">
+                    <h1 class="heading-title">موقعنا</h1>
+                  </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d431.2901370676841!2d31.39717106855519!3d30.142234523094647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145816d8d8957585%3A0xfe9e313a165835e2!2zOTQtOTMg2KPYrdmF2K8g2YTYp9i02YrZhtiMINio2LHZg9ipINin2YTZhti12LHYjCDZgtiz2YUg2KPZiNmEINin2YTYs9mE2KfZhdiMINmF2K3Yp9mB2LjYqSDYp9mE2YLYp9mH2LHYqeKArNiMINmF2LXYsQ!5e0!3m2!1sar!2ssa!4v1726996177914!5m2!1sar!2ssa" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+  
+              </div>
+        </section>
 
         <!-- Form -->
      <section class="contact-us">
@@ -347,10 +357,11 @@
                 <div class="form-left">
                     <h2>تواصل معنا</h2>
                     <p>للحصول على عرض أسعار أو ترتيب لقاء، اتصل بنا مباشرة أو املأ النموذج وسنعاود الاتصال بك في أقرب وقت ممكن.</p>
-                    <input type="text" id="name" name="name" placeholder="اسمك" required>
-                    <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required>
-                    <textarea id="message" name="message" placeholder="رسالتك" required></textarea>
-                    <button type="submit" onclick="sendMessage()">إرسال الرسالة</button>
+                        <input type="text" id="name" name="name" placeholder="اسمك" required>
+                        <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required>
+                        <input type="text" id="number" name="number" placeholder="رقم الهاتف" required>
+                        <textarea id="message" name="message" placeholder="رسالتك" required></textarea>
+                        <button type="submit" onclick="sendMessage()">إرسال الرسالة</button>
                 </div>
                 <div class="form-right">
                     <div class="image">
@@ -399,4 +410,15 @@
 
     </body>
     <script src="main.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "fkKJG7roR1QOsClVf",
+      });
+   })();
+</script>
+
 </html>
