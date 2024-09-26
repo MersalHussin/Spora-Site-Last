@@ -6,17 +6,12 @@ function toggleMenu(){
     mobileMenu.classList.toggle("opened")
 }
 
-function faq(){
-
-    document.querySelectorAll('.faq-question').forEach(item => {
-        item.addEventListener('click', () => {
-            const answer = item.nextElementSibling;
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-        });
-    });   
-}
-
-faq()
+document.querySelectorAll('.faq-question').forEach(item => {
+  item.addEventListener('click', () => {
+      const parent = item.parentNode;
+      parent.classList.toggle('active');
+  });
+});
 
 
 function sendMessage() {
@@ -58,7 +53,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 let sections = [
   { section: document.querySelector(".landing"), links: document.querySelectorAll('a[href="#landing"]') },
   { section: document.querySelector(".about-section"), links: document.querySelectorAll('a[href="#about"]') }, // تأكد أن قسم "about-section" هو ".about-section"
-  { section: document.querySelector(".services"), links: document.querySelectorAll('a[href="#Services"]') }, // تأكد من "Services" تطابق
+  { section: document.querySelector(".journey"), links: document.querySelectorAll('a[href="#journeies"]') }, // تأكد من "Services" تطابق
   { section: document.querySelector(".fabrics"), links: document.querySelectorAll('a[href="#fabrics"]') },
   { section: document.querySelector(".gallery"), links: document.querySelectorAll('a[href="#gallery"]') },
   { section: document.querySelector(".faq-section"), links: document.querySelectorAll('a[href="#faq-section"]') }

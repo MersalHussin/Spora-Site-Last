@@ -288,8 +288,8 @@ ul li a:hover::after{
 
 .landing{
     position: relative;
-    background: linear-gradient(0deg,#4169e1,rgba(0, 0, 0, 0.259) , rgba(0, 0, 0, 0.202) , rgba(0, 0, 0, 0.202)),url( "/assets/Images/Landing page/background.jpg");
-    /* background-attachment: fixed; */
+    background: linear-gradient(120deg,#4169e1,#c8ff0000),url( "/assets/Images/Landing page/background.jpg");
+    background-attachment: fixed;
     width: 100%;
     height: calc(100vh);
     background-position: center;
@@ -299,6 +299,12 @@ ul li a:hover::after{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    flex-direction: column;
+}
+.landing h1{
+color: var(--second-color);
+text-align: center;
+margin: 0 40px;
 }
 
 
@@ -316,7 +322,7 @@ ul li a:hover::after{
 	width: 20px;
 	height: 20px;
   display: block;
-	border-right: 2px solid #c9ff00;
+	border-right: 2px solid  #c9ff00;
 	border-bottom: 2px solid #c9ff00;
 	transform: rotate(45deg);
 	margin: -10px;
@@ -346,11 +352,11 @@ ul li a:hover::after{
 
 @keyframes image-ani{
     0%{
-        transform: translateY(10px);
+        transform: translateY(5px);
     }50%{
         transform: translateY(0);
     }100%{
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 }
 @keyframes shapes-ani-right{
@@ -431,17 +437,15 @@ width: 40% ;
 
 
 @media(300px<= width <= 767px){
-    .about-images {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
+    .about-image {
+        width: 100% ;
+
     }
 }
 /* About US */
 
-/* Section 1 (services) */
-.services-container{
+/* Section 1 (journeys) */
+.journey-container{
     display: flex;
     justify-content: center;
     margin: 100px;
@@ -453,32 +457,52 @@ width: 40% ;
     gap: 30px;
 }
 
-.service{
+.journey{
     text-align: center;
     margin: 50px auto;
+    counter-increment: journey;
+    position: relative;
+}
+.journey::after{
+    content: counter(journey);
+    position: absolute;
+    top: 0;
+    left: 75%;
+    width: 20px;
+    height:20px;
+    font-size: 20px;
+    background-color: var(--second-color);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: var(--main-color)    ;
+
 }
 
-.service .icon img{
+.journey .icon img{
     width: 100px;
     transition: 0.3s;
 }
-.service:hover img{
+.journey:hover img{
     transform: scale(1.2);
 }
-.service:hover .data p{
+.journey:hover .data p{
     color: var(--main-color) ;
     animation: mini-rotate 0.3s linear  2 alternate ;
 }
-.service .data{
+.journey .data{
     width: 300px;    
     text-wrap: wrap;
 }
-.service .data h1{
+.journey .data h1{
     font-size: 30px;    
     color: var(--main-color);
     transition: 0.3s;
 }
-.service .data p{
+.journey .data p{
 font-size: 18px;
 transition: 0.3s;
 }
@@ -572,7 +596,7 @@ transition: 0.3s;
 
 .video-land .video-container::after{
     content: "";
-    background: linear-gradient(#4169e129, #0000005a 90% , #4169e1  );
+    background: linear-gradient(#00175e69, #0000005a 90% , #4169e1  );
     width: 100%;
     height: 100%;
     top: 0;
@@ -808,40 +832,48 @@ transition: 0.3s;
 
 /* FAQ */
 .faq-section {
-    background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 20px 5px rgba(65, 105, 225, 0.4);
+
     border-radius: 8px;
 }
-.faq-section h2 {
-  color: var(--main-color);
-  font-weight: bold;
-}
-
-
-@media (min-width: 1500px) {
-  .faq-section {
-    max-width: 1500px;
-    margin: 50px auto !important;
-  }}
 
 .faq-section h2 {
+    color: var(--main-color);
+    font-weight: bold;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
 }
 
+@media (min-width: 1500px) {
+    .faq-section {
+        max-width: 1500px;
+        margin: 50px auto !important;
+    }
+}
+
 .faq-item {
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    box-shadow: 0 0 20px 5px rgba(65, 105, 225, 0.075);
+    padding: 20px;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    direction: ltr; /* لضمان أن النص سيظهر من اليمين لليسار */
 }
 
 .faq-question h3 {
     font-size: 18px;
-    cursor: pointer;
+    text-align: right;
     margin: 0;
     color: var(--main-color);
+    order: 2; /* يجعل النص بعد علامة "+" */
+    direction: rtl;
 }
 
 .faq-answer {
@@ -849,6 +881,32 @@ transition: 0.3s;
     margin-top: 10px;
     font-size: 16px;
 }
+
+/* Icon (+/-) */
+.faq-question::before {
+    content: "+";
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px; /* لضمان وجود مسافة بين العلامة والنص */
+    transition: transform 0.2s ease-in-out;
+    order: 1; /* يجعل علامة "+" تظهر قبل النص */
+    color: var(--main-color);
+}
+
+/* Toggle open/close effect */
+.faq-item.active .faq-question::before {
+    content: "-";
+    transform: rotate(180deg);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
 /* FAQ */
 
 
