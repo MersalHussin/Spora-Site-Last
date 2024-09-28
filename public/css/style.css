@@ -288,7 +288,7 @@ ul li a:hover::after{
 
 .landing{
     position: relative;
-    background: linear-gradient(120deg,#4169e1,#c8ff0000),url( "assets/Images/Landing page/background.jpg");
+    background: linear-gradient(120deg,#4169e1,#c8ff0000),url( "/assets/Images/Landing page/background.jpg");
     background-attachment: fixed;
     width: 100%;
     height: calc(100vh);
@@ -539,7 +539,7 @@ transition: 0.3s;
 }
 
 .image-land.fabric{
-    background:linear-gradient(rgba(0, 0, 0, 0.284),#4169e1),url("assets/Images/addtional-images/Fabric.jpg");
+    background:linear-gradient(rgba(0, 0, 0, 0.284),#4169e1),url("/assets/Images/addtional-images/Fabric.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -568,7 +568,7 @@ transition: 0.3s;
     }
     
     .image-land.fabric{
-        background:linear-gradient(rgba(0, 0, 0, 0.379),#4169e1),url("assets/Images/Landing page/sec img/Fabric.jpg");
+        background:linear-gradient(rgba(0, 0, 0, 0.379),#4169e1),url("/assets/Images/Landing page/sec img/Fabric.jpg");
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
