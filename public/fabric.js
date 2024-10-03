@@ -85,7 +85,7 @@ const fabrics = [
     },
     {
         name: "كاتيونك",
-        image: "./assets/Images/Fabrics/كاتيونك.jpg",
+        image: "./assets/Images/Fabrics/كاتيونك.jpeg",
         description: "متوفر لدينا قماش كاتيونك بـ أفضل خامة مناسبة لنوع ملابسك الرياضية.",
         link: "https://wa.me/201099043433?text=كنت عاوز استفسر عن كاتيونك"
     },
