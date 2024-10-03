@@ -1,9 +1,0 @@
-Fonts used in this design:
-
-Font: Archivo Black
-Author: Omnibus-Type
-Url: https://fonts.google.com/specimen/Archivo+Black
-
-Font: Satisfy
-Author: Sideshow
-Url: https://fonts.google.com/specimen/Satisfy

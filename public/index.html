@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spora Tex</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="/assets//Images/Landing page/Logo White.svg" />
+    <link rel="icon" href="./assets//Images/Landing page/Logo White.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -246,40 +246,41 @@
       </div>
       <div class="journey-container">
         <div class="boxes">
-          <div class="box">
+
+          <div class="box ">
             <div class="image">
-              <img src="assets/Images/Fabrics/IMG_0048 (1).JPG" alt="روزيتا" />
+              <img src="assets/Images/Fabrics/اوبن ماش.jpeg" alt="اوبن ماش" />
             </div>
             <div class="data">
-              <h1>روزيتا</h1>
-              <p>يوجد عندنا جميع أنواع الأقمشة الرياضية التي يمكنك شراءها</p>
-              <a href="#wa">أسأل عن القماش</a>
+              <h1>اوبن ماش</h1>
+              <p>متوفر لدينا قماش الاوبن ماش بـ أفضل خامة مناسبة لنوع ملابسك الرياضية.</p>
+              <a href="https://wa.me/201099043433?text= كنت عاوز استفسر عن الكلوز ماش">أسأل عن القماش</a>
             </div>
           </div>
           <div class="box special">
             <div class="image">
-              <img src="assets/Images/Fabrics/IMG_0048 (1).JPG" alt="روزيتا" />
+              <img src="assets/Images/Fabrics/روزيتا.jpeg" alt="روزيتا" />
             </div>
             <div class="data">
               <h1>روزيتا</h1>
-              <p>يوجد عندنا جميع أنواع الأقمشة الرياضية التي يمكنك شراءها</p>
-              <a href="#wa">أسأل عن القماش</a>
+              <p>متوفر لدينا قماش الروزيتا بـ أفضل خامة مناسبة لنوع ملابسك الرياضية.</p>
+              <a href="https://wa.me/201099043433?text= كنت عاوز استفسر عن  الروزيتا">أسأل عن القماش</a>
             </div>
           </div>
           <div class="box">
             <div class="image">
-              <img src="assets/Images/Fabrics/IMG_0048 (1).JPG" alt="روزيتا" />
+              <img src="assets/Images/Fabrics/كلوز ماش.jpeg" alt="كلوز ماش" />
             </div>
             <div class="data">
-              <h1>روزيتا</h1>
-              <p>يوجد عندنا جميع أنواع الأقمشة الرياضية التي يمكنك شراءها</p>
-              <a href="#wa">أسأل عن القماش</a>
+              <h1>كلوز ماش</h1>
+              <p>متوفر لدينا قماش كلوز ماش بـ أفضل خامة مناسبة لنوع ملابسك الرياضية.</p>
+              <a href="https://wa.me/201099043433?text=كنت عاوز استفسر عن كلوز ماش">أسأل عن القماش</a>
             </div>
           </div>
         </div>
       </div>
       <div class="more-btn">
-        <a href="/fabrics.html">عرض الكل</a>
+        <a href="fabrics.html">عرض الكل</a>
       </div>
     </section>
     <!-- End Fabrics -->
@@ -683,5 +684,41 @@
         publicKey: "fkKJG7roR1QOsClVf",
       });
     })();
+  </script>
+
+  <script>
+    
+
+// Scrool Header
+
+
+/*link color */
+let sections = [
+  { section: document.querySelector(".landing"), links: document.querySelectorAll('a[href="#landing"]') },
+  { section: document.querySelector(".about-section"), links: document.querySelectorAll('a[href="#about"]') }, // تأكد أن قسم "about-section" هو ".about-section"
+  { section: document.querySelector(".journey"), links: document.querySelectorAll('a[href="#journey"]') }, 
+  { section: document.querySelector(".fabrics"), links: document.querySelectorAll('a[href="#fabrics"]') },
+  { section: document.querySelector(".gallery"), links: document.querySelectorAll('a[href="#gallery"]') },
+  { section: document.querySelector(".faq-section"), links: document.querySelectorAll('a[href="#faq-section"]') }
+];
+
+let allLinks = document.querySelectorAll("header ul a"); // جميع الروابط في القائمة
+
+function setActiveLink() {
+  let scrollPosition = window.scrollY + window.innerHeight / 2; // تحديد نقطة المنتصف
+  sections.forEach(({ section, links }) => {
+    if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+      // حذف class 'active' من جميع الروابط
+      allLinks.forEach(link => link.classList.remove("active")); 
+      // إضافة class 'active' لجميع الروابط المرتبطة بالقسم النشط
+      links.forEach(link => link.classList.add("active"));
+    }
+  });
+}
+
+// استدعاء الدالة عند التمرير
+window.addEventListener("scroll", setActiveLink);
+
+
   </script>
 </html>

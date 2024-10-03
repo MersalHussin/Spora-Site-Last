@@ -1,6 +1,11 @@
 let burgerMenu = document.querySelector(".burger-menu");
 let mobileMenu = document.querySelector(".on-mobile");
 
+
+
+
+// Fabrics
+
 function toggleMenu(){
     burgerMenu.classList.toggle("opened")
     mobileMenu.classList.toggle("opened")
@@ -44,35 +49,3 @@ function sendMessage() {
 
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
-
-
-// Scrool Header
-
-
-/*link color */
-let sections = [
-  { section: document.querySelector(".landing"), links: document.querySelectorAll('a[href="#landing"]') },
-  { section: document.querySelector(".about-section"), links: document.querySelectorAll('a[href="#about"]') }, // تأكد أن قسم "about-section" هو ".about-section"
-  { section: document.querySelector(".journey"), links: document.querySelectorAll('a[href="#journey"]') }, 
-  { section: document.querySelector(".fabrics"), links: document.querySelectorAll('a[href="#fabrics"]') },
-  { section: document.querySelector(".gallery"), links: document.querySelectorAll('a[href="#gallery"]') },
-  { section: document.querySelector(".faq-section"), links: document.querySelectorAll('a[href="#faq-section"]') }
-];
-
-let allLinks = document.querySelectorAll("header ul a"); // جميع الروابط في القائمة
-
-function setActiveLink() {
-  let scrollPosition = window.scrollY + window.innerHeight / 2; // تحديد نقطة المنتصف
-  sections.forEach(({ section, links }) => {
-    if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
-      // حذف class 'active' من جميع الروابط
-      allLinks.forEach(link => link.classList.remove("active")); 
-      // إضافة class 'active' لجميع الروابط المرتبطة بالقسم النشط
-      links.forEach(link => link.classList.add("active"));
-    }
-  });
-}
-
-// استدعاء الدالة عند التمرير
-window.addEventListener("scroll", setActiveLink);
-

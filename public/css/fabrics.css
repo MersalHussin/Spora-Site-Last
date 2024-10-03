@@ -6,7 +6,7 @@
     position: relative;
     top: 100px;
     height: 40vh;
-    background:linear-gradient(rgba(0, 0, 0, 0.379),#4169e1),url("/assets/Images/Landing page/sec img/Fabric.jpg");
+    background:linear-gradient(rgba(0, 0, 0, 0.379),#4169e1),url("../assets/Images/Landing page/Fabric.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     border-bottom: 10px solid #c9ff00;
